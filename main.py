@@ -153,7 +153,7 @@ class Player(object):
                     self.mana -= 7
                     spell_damage = random.randint(12, 15)
                     enemy.hp -= spell_damage
-                    print('\n%s casts Fireball! %s takes %d damage!' % \
+                    print('\n%s casts Fireball! %s takes %d damage!' %
                           (player.name, enemy.name, spell_damage))
                     break
             elif choice == 'stun':
@@ -299,7 +299,7 @@ class Player(object):
         player.back = False
         print('\nEquipment:')
         for i in self.equipment:
-                    print(self.equipment.index(i), i.name)
+            print(self.equipment.index(i), i.name)
         while True:
             try:
                 choice = input('\nInspect an item by its number or [BACK] > ').lower()
@@ -409,7 +409,7 @@ Moments after you lay down, you begin to doze off. > ''')
                             self.hp = self.max_hp
                         if self.mana > self.max_mana:
                             self.mana = self.max_mana
-                        print('\n%s regains %d HP and %d MP!' % \
+                        print('\n%s regains %d HP and %d MP!' %
                               (player.name, hours, mp_regained))
                 else:
                     if player.hp != player.max_hp:
@@ -437,7 +437,7 @@ class Monster(object):
         attack = 2 + self.strength + int(self.sta * random.random())
         damage = int(random.random() * (self.sta / 2)) + self.strength
         if attack >= enemy.ac:
-            print('\n%s strikes %s with their %s for %d damage!' % \
+            print('\n%s strikes %s with their %s for %d damage!' %
                   (self.name, enemy.name, self.weapon, damage))
             enemy.hp -= damage
         else:
@@ -458,7 +458,7 @@ class Boss(object):
         if random.randint(1, 10) > 4:
             player.hp -= damage
             input('\n%s casts %s on %s for %d damage!' % (self.name,
-                      random.choice(self.spells), player.name, damage))
+                    random.choice(self.spells), player.name, damage))
         else:
             input('\n%s\'s spell fizzles!' % self.name)
 
@@ -749,7 +749,7 @@ def random_monster():
     if len(random_monsters) == 0:
         pass
     elif player.player_class == 'thief':
-        print('\nYou open the door quietly and can see %s ' \
+        print('\nYou open the door quietly and can see %s ' 
               'patrolling the next room.' % i.name)
         choice = input('Do you attempt to sneak past the creature? > ').lower()
         if choice == 'yes':
@@ -806,6 +806,7 @@ def loot():
         player.equipment.append(i)
         input('\nYou find a %s!' % i.name)
 
+
 # Weapons - attributes are name, attack, AC penalty, price.
 bastard_sword = Weapon('bastard sword', 4, 1, 20)
 staff = Weapon('gnarled staff', 2, 0, 15)
@@ -842,7 +843,7 @@ spider = Monster('a giant tarantula', 21, 21, 4, 6, 7, 6, 'fangs', 0)
 player = Player('', '', 21, 21, 2, 6, 5, 0, 0, [], [], 15, 0, False,
                 False, '', '', False, 0, None)
 
-#Boss - attributes are: Name, HP, AC, spells, stunned.
+# Boss - attributes are: Name, HP, AC, spells, stunned.
 sorceror = Boss('a mysterious figure', 20, 8, ['lightning strike', 'fireball',
                                                'meteor', 'ice strike'], 0)
 

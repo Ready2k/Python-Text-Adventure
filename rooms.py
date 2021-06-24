@@ -10,8 +10,7 @@ def agency():
                 print('\n%s\'s HP: %d, MP: %d' % (main.player.name, main.player.hp,
                                                   main.player.mana))
                 choice = input('[Search] | [Shop] | [Inventory] | [Spells]'
-                                   ' | [Status] | [Rest] | [Proceed] > '
-                                   ).lower()
+                                    ' | [Status] | [Rest] | [Proceed] > ').lower()
             else:
                 print('\n%s\'s HP: %d, MP: %d' % (main.player.name, main.player.hp,
                                                   main.player.mana))
@@ -386,7 +385,7 @@ items on display look to be in excellent condition. > ''')
                             break
                         else:
                             print('\n', main.weapons[int(choice)].name.title())
-                            print('Attack: %d \t AC Penalty: %d' % \
+                            print('Attack: %d \t AC Penalty: %d' %
                                   (main.weapons[int(choice)].attack,
                                    main.weapons[int(choice)].ac_penalty))
                             print('\nPrice: %d gold' % main.weapons[int(choice)].price)
@@ -448,7 +447,7 @@ items on display look to be in excellent condition. > ''')
                             break
                         else:
                             print('\n', main.items[int(choice)].name.title())
-                            print('HP Bonus: %d' % main.items[int(choice)].plus_hp, \
+                            print('HP Bonus: %d' % main.items[int(choice)].plus_hp,
                                   '\t', 'MP Bonus: %d' % main.items[int(choice)].plus_mana)
                             print('Damage: %d' % main.items[int(choice)].damage)
                             print('\nPrice: %d gold' % main.items[int(choice)].price)
@@ -480,7 +479,7 @@ items on display look to be in excellent condition. > ''')
                             break
                         else:
                             print('\n', main.magic_items[int(choice)].name.title())
-                            print('Attack: %d \t AC Penalty: %d' % \
+                            print('Attack: %d \t AC Penalty: %d' %
                                   (main.magic_items[int(choice)].attack,
                                    main.magic_items[int(choice)].ac_penalty))
                             print('\nPrice: %d gold' % main.magic_items[int(choice)].price)
@@ -731,6 +730,7 @@ def title():
         start()
     except IOError:
         start()
+
 
 # Instantiating the room classes from above so they can be used in main.py
 mine_entrance = MineEntrance()
